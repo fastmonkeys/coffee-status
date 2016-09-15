@@ -6,12 +6,13 @@
 
 ## How to install:
 
- 1. install bitbar https://getbitbar.com/ and set the plugin folder wherever you want
-  - you need to create empty folder somewhere and set it as bitbars plugin folder
- - copy the `coffee.20s.py` file to the bitbar plugins folder
- - modify permissions of `coffee.20s.py` file with chmod so bitbar can run it
-  - go to the folder in command line
-  - run `chmod 777 coffee.20s.py`
+ 1. Install bitbar https://getbitbar.com/ and set the plugin folder wherever you want
+  - You need to create empty folder somewhere and set it as bitbars plugin folder
+ - Download the `coffee.20s.py` file to the bitbar plugins folder
+  - This file: https://raw.githubusercontent.com/fastmonkeys/coffee-status/master/coffee.20s.py
+ - Modify permissions of `coffee.20s.py` file with chmod so bitbar can run it
+  - Go to the folder in command line
+  - Run `chmod 777 coffee.20s.py`
 
 Optional:
 
