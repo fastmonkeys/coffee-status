@@ -26,14 +26,14 @@ f = open(filename, 'r')
 notified_brews = [line.strip() for line in f.readlines()]
 f.close()
 
-if data['brewed_at'] not in notified_brews and brewed_at_datetime > datetime.datetime.now() - datetime.timedelta(hours=1):
-    f = open(filename, 'a')
-    f.write('{}\n'.format(data['brewed_at']))
-    f.close()
-
-    try:
-        from pync import Notifier
+try:
+    from pync import Notifier
+    if data['brewed_at'] not in notified_brews and brewed_at_datetime > datetime.datetime.now() - datetime.timedelta(hours=3):
+        f = open(filename, 'a')
+        f.write('{}\n'.format(data['brewed_at']))
+        f.close()
         Notifier.notify('New pan of coffee was brewed at {}'.format(brewed_at), title='New coffee')
-    except ImportError:
-        print('Install pync to get notifications of new brews')
+except ImportError:
+    print('---')
+    print('Install pync to get notifications of new brews')
 
