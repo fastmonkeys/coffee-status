@@ -11,7 +11,8 @@ data = json.loads(response.decode('utf-8'))
 
 # Coffee amount
 cups = data['current'] / 10
-brewed_at = datetime.datetime.strptime(data['brewed_at'], '%Y-%m-%d %H:%M:%S.%f').strftime('%H:%M')
+brewed_at_datetime = datetime.datetime.strptime(data['brewed_at'], '%Y-%m-%d %H:%M:%S.%f')
+brewed_at = brewed_at_datetime.strftime('%H:%M')
 if cups > 0:
     print (':coffee:' * cups, 'brewed ', brewed_at)
 else:
@@ -27,7 +28,7 @@ f = open(filename, 'r')
 notified_brews = [line.strip() for line in f.readlines()]
 f.close()
 
-if data['brewed_at'] not in notified_brews:
+if data['brewed_at'] not in notified_brews and brewed_at_datetime > datetime.datetime.now() - datetime.timedelta(hours=1):
     f = open(filename, 'a')
     f.write('{}\n'.format(data['brewed_at']))
     f.close()
