@@ -11,10 +11,11 @@ data = json.loads(response.decode('utf-8'))
 cups = data['current'] / 10
 brewed_at_datetime = datetime.datetime.strptime(data['brewed_at'], '%Y-%m-%d %H:%M:%S.%f')
 brewed_at = brewed_at_datetime.strftime('%H:%M')
+ago = int((datetime.datetime.now() - brewed_at_datetime).total_seconds()/60)
 if cups > 0:
-    print (':coffee:' * cups, 'brewed ', brewed_at)
+    print('%sX:coffee:%smin' % (cups, ago))
 else:
-    print ('empty pan, last brew', brewed_at)
+    print(':x:%smin' % ago)
 
 
 # Notify when new pan
