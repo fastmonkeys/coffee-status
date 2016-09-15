@@ -6,10 +6,16 @@
 
 ## How to install:
 
- 1. install bitbar https://getbitbar.com/ and set the script folder wherever you want
- - install pync to get notifications when coffe is brewed `pip install pync`
- - copy the `coffee.20s.py` file to bitbar script folder
+ 1. install bitbar https://getbitbar.com/ and set the plugin folder wherever you want
+  - you need to create empty folder somewhere and set it as bitbars plugin folder
+ - copy the `coffee.20s.py` file to the bitbar plugins folder
  - modify permissions of `coffee.20s.py` file with chmod so bitbar can run it
+  - go to the folder in command line
+  - run `chmod 777 coffee.20s.py`
+
+Optional:
+
+ - if you want to get notifications when new pan is brewed install pync with pip `pip install pync`
  
 
 ## Example image
