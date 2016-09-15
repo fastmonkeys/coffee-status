@@ -8,12 +8,12 @@
 
  1. Clone this repository to your computer
   - Run in the command line `git clone https://github.com/fastmonkeys/coffee-status.git`
- - Install bitbar https://getbitbar.com/ and set the plugin folder to the folder where you cloned this repository
+ - Install bitbar https://getbitbar.com/ and set the plugin folder to `plugins` folder under this repository
  - Modify permissions of `coffee.20s.py` file with chmod so bitbar can run it
   - Go to the folder in command line
   - Run `chmod 777 coffee.20s.py`
 Optional:
- - if you want to get notifications when new pan is brewed install pync with pip `pip install pync`
+ - if you want to get notifications when new pan is brewed install pync
  
 
 ## Example image
